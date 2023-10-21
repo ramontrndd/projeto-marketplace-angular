@@ -9,6 +9,9 @@ import { FooterComponent } from './components/template/footer/footer.component'
 import  { MatListModule } from '@angular/material/list';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { NavbarComponent } from './components/template/navbar/navbar.component';
+import {MatCardModule} from '@angular/material/card';
+import { HomeComponent } from './views/home/home.component';
+
 
 
 @NgModule({
@@ -16,7 +19,8 @@ import { NavbarComponent } from './components/template/navbar/navbar.component';
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    NavbarComponent
+    NavbarComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -24,7 +28,8 @@ import { NavbarComponent } from './components/template/navbar/navbar.component';
     BrowserAnimationsModule,
     MatToolbarModule,
     MatListModule,
-    MatSidenavModule
+    MatSidenavModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
