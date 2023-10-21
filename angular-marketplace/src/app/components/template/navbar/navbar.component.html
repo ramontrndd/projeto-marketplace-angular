@@ -1,0 +1,35 @@
+<mat-sidenav-container class="nav-container">
+    <mat-sidenav #sidenav class="sidenav" mode="side" closed fixedInViewport="true" fixedTopGap="100">
+    
+
+    <mat-list class="mat-list">
+       <mat-list-item>
+        <a href="#">
+            <i class="material-icons">home</i>Home
+        </a>
+       </mat-list-item>
+       <mat-list-item>
+        <a href="#">
+            <i class="material-icons">theaters</i>List Films
+        </a>
+       </mat-list-item>
+       <mat-list-item>
+        <a href="#">
+            <i class="material-icons">import_contacts</i>About the author
+        </a>
+       </mat-list-item>
+    </mat-list>
+
+  
+   
+</mat-sidenav>
+
+<mat-sidenav-content class="content">
+    
+            <button mat-icon-button (click)="sidenav.toggle()" class="mat-nav-button">
+            <i class="material-icons">menu</i>
+            </button>
+
+</mat-sidenav-content>
+ 
+</mat-sidenav-container>
