@@ -28,7 +28,10 @@ export class CheckoutService {
       return this.httpClient.get<Film[]>(this.baseUrl+'films');
     }
 
-    selectFilm(){this.totalPrice += this.getPrice();
+    selectFilm(){
+      setTimeout(() => {
+        this.totalPrice += this.getPrice();
+      }, 1);
     }
     
     unselectFilm(){
@@ -36,6 +39,7 @@ export class CheckoutService {
       if (this.totalPrice < 0) {
         this.totalPrice = 0;
       }
+      
     }
   }
 
