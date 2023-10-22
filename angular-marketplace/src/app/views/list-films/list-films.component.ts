@@ -13,7 +13,7 @@ export class ListFilmsComponent implements OnInit{
   constructor(private checkoutservice: CheckoutService) {}
   ngOnInit(): void{
     this.checkoutservice.getListFilms().subscribe((film) => {
-      this.listFilm = film; 
+      this.listFilms = film; 
     })
 
   }
