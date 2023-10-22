@@ -11,6 +11,9 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { NavbarComponent } from './components/template/navbar/navbar.component';
 import {MatCardModule} from '@angular/material/card';
 import { HomeComponent } from './views/home/home.component';
+import {HttpClientModule} from "@angular/common/http";
+import { CardFilmComponent } from './components/template/card-film/card-film.component';
+import { ListFilmsComponent } from './views/list-films/list-films.component';
 
 
 
@@ -20,7 +23,10 @@ import { HomeComponent } from './views/home/home.component';
     HeaderComponent,
     FooterComponent,
     NavbarComponent,
-    HomeComponent
+    HomeComponent,
+    CardFilmComponent,
+    ListFilmsComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -29,7 +35,8 @@ import { HomeComponent } from './views/home/home.component';
     MatToolbarModule,
     MatListModule,
     MatSidenavModule,
-    MatCardModule
+    MatCardModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
