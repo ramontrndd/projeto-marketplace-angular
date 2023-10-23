@@ -17,6 +17,13 @@ import {HttpClientModule} from "@angular/common/http";
 import { CardFilmComponent } from './components/template/card-film/card-film.component';
 import { ListFilmsComponent } from './views/list-films/list-films.component';
 import { SelectButtonComponent } from './components/template/select-button/select-button.component';
+import  { MatSnackBarModule } from '@angular/material/snack-bar';
+import  { MatFormFieldModule } from '@angular/material/form-field';
+import  { MatInputModule } from '@angular/material/input';
+import  { MatBadgeModule } from '@angular/material/badge';
+import { CheckoutComponent } from './views/checkout/checkout.component';
+import {MatIconModule} from '@angular/material/icon';
+
 
 
 
@@ -30,6 +37,7 @@ import { SelectButtonComponent } from './components/template/select-button/selec
     CardFilmComponent,
     ListFilmsComponent,
     SelectButtonComponent,
+    CheckoutComponent,
     
   ],
   imports: [
@@ -42,7 +50,12 @@ import { SelectButtonComponent } from './components/template/select-button/selec
     MatCardModule,
     HttpClientModule,
     MatButtonModule,
-    MatButtonToggleModule
+    MatButtonToggleModule,
+    MatSnackBarModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatBadgeModule,
+    MatIconModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
