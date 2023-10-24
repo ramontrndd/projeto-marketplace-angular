@@ -14,7 +14,7 @@
 
         <p class="card-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique commodi, aliquam quod expedita iure ducimus recusandae ipsa ad laudantium quasi voluptatem aut facere. Praesentium eligendi cupiditate veniam, similique incidunt voluptate!</p>
         <p class="card-description">
-            {{film.price}}
+            {{film.price | currency: "BRL"}}
         </p>
 
         <app-select-button (click)="selectFilm(film)"></app-select-button>

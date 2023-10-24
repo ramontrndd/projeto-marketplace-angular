@@ -23,7 +23,7 @@ import  { MatInputModule } from '@angular/material/input';
 import  { MatBadgeModule } from '@angular/material/badge';
 import { CheckoutComponent } from './views/checkout/checkout.component';
 import {MatIconModule} from '@angular/material/icon';
-
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -56,6 +56,7 @@ import {MatIconModule} from '@angular/material/icon';
     MatInputModule,
     MatBadgeModule,
     MatIconModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
