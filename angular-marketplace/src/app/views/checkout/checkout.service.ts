@@ -30,12 +30,13 @@ export class CheckoutService {
     this._filmHandler = value;
   }
   constructor(private httpClient: HttpClient, private snackBar: MatSnackBar) {}
-  showMessage(msg: string, isError: boolean = false): void {
-    this.snackBar.open(msg, 'Close!', {
+  showMessage(msg: string, isError: boolean = false, action: string): void {
+    this.snackBar.open(msg, 'Close!',{
+      
       duration: 5000,
-      horizontalPosition: 'center',
+      horizontalPosition: 'right',
       verticalPosition: 'top',
-      panelClass: isError ? ['sucess'] : ['error'],
+      panelClass: isError ? ['sucess:'] : ['error'],
     });
   }
   getListFilms(): Observable<Film[]> {

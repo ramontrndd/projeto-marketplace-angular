@@ -51,3 +51,12 @@ h3 {
   height: 100px;
   border-radius: 2px;
 }
+.error{
+    background-color: #eb3f5b;
+    color: #f2f2f2;
+}
+
+.sucess{
+    background-color: #00f514;
+    color: #f2f2f2;   
+}

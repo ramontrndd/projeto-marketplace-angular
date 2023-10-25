@@ -35,8 +35,19 @@ export class CheckoutComponent implements OnInit {
     this.route.navigate(['../list-films']);
   }
   payment(): void {
-    this.checkoutService.showMessage('Payment!', true);
-    this.route.navigate(['../list-films']);
+    if (
+      this.client.adress === undefined ||
+      this.client.name === undefined ||
+      this.client.password === undefined
+    ) {
+      this.checkoutService.showMessage('Please enter a valid data', false);
+    } else {
+      this.checkoutService.showMessage(
+        `'Payment is Sucessfully good choice! Confirmed order: to, ${this.client.adress} by ${this.client.name}`,
+        true
+      );
+      this.route.navigate(['../list-films']);
+    }
   }
   toggleButton() {
     if (this.listSelectedFilms.length == 0) {
