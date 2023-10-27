@@ -1,11 +1,5 @@
 <mat-card>
-    <mat-card-title>
-        List Film
-    </mat-card-title>
 
-    <mat-card-subtitle>
-<h2> {{listFilms.length}}  films found</h2>
-    </mat-card-subtitle>
 
     <mat-card-content>
          <app-card-film></app-card-film>
@@ -20,8 +14,10 @@
         (mouseout)="toggleBadgeVisibility()"
         (click)="toCheckout()"
         ><mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="shopping_cart"></mat-icon></button>
-        <p class="btn-description"> To CheckOut</p>
+        <p class="btn-description"> To Checkout</p>
     </div>
-   
+    <mat-card-subtitle>
+        <h2> {{listFilms.length}}  films found</h2>
+            </mat-card-subtitle>
 </mat-card>
 

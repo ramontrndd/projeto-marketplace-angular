@@ -1,14 +1,23 @@
-<button 
-mat-flat-button 
-color="primary" 
-class="selected" 
-[disabled]="disabled === true" 
-(click)="selectFilm()"> Select </button>
-
-
-<button 
-mat-flat-button 
-color="warn" 
-[disabled]="disabled === false" 
-(click)="unselectFilm()"> Unselected </button>
-
+<div class="cart-content">
+  <div class="add-cart">
+    <button
+      mat-flat-button
+      color="primary"
+      class="selected"
+      [disabled]="disabled === true"
+      (click)="selectFilm()"
+    >
+      COMPRAR <mat-icon>shopping_cart</mat-icon>
+    </button>
+  </div>
+  <div class="remove-cart">
+    <button
+      mat-flat-button
+      color="warn"
+      [disabled]="disabled === false"
+      (click)="unselectFilm()"
+    >
+      REMOVER <mat-icon>remove_shopping_cart</mat-icon>
+    </button>
+  </div>
+</div>

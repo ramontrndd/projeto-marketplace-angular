@@ -9,12 +9,15 @@ import { Router } from '@angular/router';
   styleUrls: ['./list-films.component.css']
 })
 export class ListFilmsComponent implements OnInit{
+
   listFilms: Film [] = [];
   listSelectedFilms!: number;
   hidden = false
 
   constructor(private checkoutservice: CheckoutService, private route: Router) {}
   ngOnInit(): void{
+    this.checkoutservice.totalPrice = 0;
+    this.checkoutservice.listSelectedFilms = [];
     this.checkoutservice.getListFilms().subscribe((film) => {
       this.listFilms = film; 
     })
