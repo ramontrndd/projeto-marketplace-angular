@@ -1,6 +1,7 @@
 .mat-card-container {
   display: inline-flex;
   margin: 10px 10px;
+  overflow: hidden;
 }
 .card-film {
   width: 300px;
@@ -22,7 +23,9 @@
   transition: 0.8s;
 }
 .card-description {
-  text-align: left;
+  text-align: justify;
+  margin-bottom: 15px;
+  
 }
 .mat-card-category {
   margin-bottom: 0.5rem;
