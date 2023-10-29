@@ -25,13 +25,15 @@
   text-align: left;
 }
 .mat-card-category {
-  margin-bottom: 2rem;
+  margin-bottom: .5rem;
 }
 .mat-card-category h3 {
   text-indent: 15px;
+  font-size: 0.9rem;
 }
 .mat-card-title h2{
-    padding: 10px
+    padding: 5px;
+    font-size: 1.2rem;
 }
 .card-price{
     display: flex;
