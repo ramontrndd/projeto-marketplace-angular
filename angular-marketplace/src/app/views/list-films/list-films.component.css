@@ -1,24 +1,19 @@
-.fab-button{
-    position:fixed;
-    width:60px;
-    height:60px;
-    bottom:40px;   /* /fixa o botão à 40px do fim da página */
-    right:30px;    /*/fixa o botão a 10px da borda direita da página*/
-    color:#FFF;
-    border: 1px dotted rgba(130, 130, 130, 0.3);
-    border-radius:50px;
-    text-align:center;
-    z-index:1000;    /*/posiciona o botão acima dos demais componentes da página*/
-
+.fab-button {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 40px; /* fixa o botão à 40px do fim da página */
+  right: 30px; /*fixa o botão a 10px da borda direita da página*/
+  text-align: center;
+  z-index: 1000; /*posiciona o botão acima dos demais componentes da página*/
 }
-.fab-button .btn-description{
-    display: none;
-    position: absolute;
-    bottom: 35%;
-    left: 80%;
-    background-color: #fff;
-    color: #2c2c2c;
-    border-radius: 4px;
-    padding: .5rem;
-    
+.fab-button .btn-description {
+  display: none;
+  position: absolute;
+  bottom: 35%;
+  left: 80%;
+  background-color: #fff;
+  color: #2c2c2c;
+  border-radius: 4px;
+  padding: 0.5rem;
 }

@@ -30,9 +30,8 @@ export class CheckoutService {
     this._filmHandler = value;
   }
   constructor(private httpClient: HttpClient, private snackBar: MatSnackBar) {}
-  showMessage(msg: string, isError: boolean = false,): void {
-    this.snackBar.open(msg, 'Close!',{
-      
+  showMessage(msg: string, isError: boolean = false): void {
+    this.snackBar.open(msg, 'Close!', {
       duration: 5000,
       horizontalPosition: 'right',
       verticalPosition: 'top',

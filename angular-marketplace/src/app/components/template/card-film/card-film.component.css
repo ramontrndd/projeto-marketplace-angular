@@ -15,32 +15,32 @@
   opacity: 0.7;
   transition: 0.2s;
   border-radius: 5px;
+  margin-bottom: 10px;
 }
-
 .card-content img:hover {
   opacity: 1;
-  transition:  .8s;
+  transition: 0.8s;
 }
 .card-description {
   text-align: left;
 }
 .mat-card-category {
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
 }
 .mat-card-category h3 {
   text-indent: 15px;
   font-size: 0.9rem;
 }
-.mat-card-title h2{
-    padding: 5px;
-    font-size: 1.2rem;
+.mat-card-title h2 {
+  padding: 5px;
+  font-size: 1.2rem;
 }
-.card-price{
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    align-items: center;
-    margin-bottom: 15px;
-    font-weight: bold;
-    font-size: 1.5rem;
+.card-price {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 15px;
+  font-weight: bold;
+  font-size: 1.5rem;
 }
