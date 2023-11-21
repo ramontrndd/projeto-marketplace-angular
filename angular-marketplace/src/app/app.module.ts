@@ -25,6 +25,7 @@ import { CheckoutComponent } from './views/checkout/checkout.component';
 import { MatIconModule } from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
 import { ApiService } from './services/ApiService';
+import { NotFoundComponent } from './components/template/not-found/not-found.component';
 
 
 @NgModule({
@@ -38,6 +39,7 @@ import { ApiService } from './services/ApiService';
     ListFilmsComponent,
     SelectButtonComponent,
     CheckoutComponent,
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule,

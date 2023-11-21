@@ -1,10 +1,19 @@
-.cart-content{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
+.cart-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Smooch Sans';
 }
-button { 
-    font-size: .5rem;
-    margin: 0px 5px 
+button {
+  font-size: 0.5rem;
+  margin: 0px 5px;
+  font-family: 'Kdam Thmor Pro', sans-serif;
+ 
+}
+.mat-mdc-button.mat-mdc-button-base,
+.mat-mdc-raised-button.mat-mdc-button-base,
+.mat-mdc-unelevated-button.mat-mdc-button-base,
+.mat-mdc-outlined-button.mat-mdc-button-base {
+  height: 20px;
 }
