@@ -4,6 +4,7 @@ import { HomeComponent } from './views/home/home.component';
 import { ListFilmsComponent } from './views/list-films/list-films.component';
 import { CheckoutComponent } from './views/checkout/checkout.component';
 import { NotFoundComponent } from './components/template/not-found/not-found.component';
+import { AboutComponent } from './components/template/about/about.component';
 
 const routes: Routes = [
   {
@@ -22,6 +23,10 @@ const routes: Routes = [
   {
     path: 'checkout',
     component: CheckoutComponent,
+  },
+  {
+    path: 'sobre',
+    component: AboutComponent,
   },
   {
     path: '**',

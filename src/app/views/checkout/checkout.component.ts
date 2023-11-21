@@ -3,7 +3,6 @@ import { CheckoutService } from './checkout.service';
 import { Router } from '@angular/router';
 import { Film } from '../home/list-films/film.model';
 
-
 @Component({
   selector: 'app-checkout',
   templateUrl: './checkout.component.html',
@@ -41,10 +40,13 @@ export class CheckoutComponent implements OnInit {
       this.client.name === undefined ||
       this.client.password === undefined
     ) {
-      this.checkoutService.showMessage('Please enter a valid data', false);
+      this.checkoutService.showMessage(
+        'Por favor insira dados válidos!',
+        false
+      );
     } else {
       this.checkoutService.showMessage(
-        `'Payment is Sucessfully good choice! Confirmed order: to, true' ${this.client.adress} by ${this.client.name}`,
+        `'Pagamento realizado com sucesso! Pedido confirmado:' ${this.client.adress} Para: ${this.client.name}`,
         true
       );
       this.route.navigate(['../list-films']);

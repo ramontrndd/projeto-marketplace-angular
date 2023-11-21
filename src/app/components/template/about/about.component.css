@@ -1,0 +1,11 @@
+.mat-card-container {
+    display: inline-flex;
+    margin: 10px 0px;
+  }
+  h5 {
+    font-size: 1rem;
+    text-align: justify;
+  }
+  .about {
+    padding: 10px;
+  }

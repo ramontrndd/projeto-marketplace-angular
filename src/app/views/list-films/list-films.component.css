@@ -2,10 +2,10 @@
   position: fixed;
   width: 60px;
   height: 60px;
-  bottom: 40px; /* fixa o botão à 40px do fim da página */
-  right: 30px; /*fixa o botão a 10px da borda direita da página*/
+  bottom: 10px; 
+  right: 20px; 
   text-align: center;
-  z-index: 1000; /*posiciona o botão acima dos demais componentes da página*/
+  z-index: 1000; 
 }
 .fab-button .btn-description {
   display: none;

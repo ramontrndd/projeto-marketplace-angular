@@ -3,7 +3,7 @@
     ><h2 style="color: white">Checkout</h2></mat-card-title
   >
   <mat-card class="mat-card">
-    <h2>{{ listSelectedFilms.length }} Selected Items</h2>
+    <h2>{{ listSelectedFilms.length }} Filmes Selecionados</h2>
 
     <mat-card
       class="mat-card-film"
@@ -21,11 +21,11 @@
           </mat-card-subtitle>
         </div>
         <button mat-flat-button color="warn" (click)="exclude(film)">
-          Exclude
+          Excluir
         </button>
       </mat-card-content>
     </mat-card>
-    <h3>Total cost: {{ totalPrice | currency : "BRL" }}</h3>
+    <h3>Custo total : {{ totalPrice | currency : "BRL" }}</h3>
   </mat-card>
   <mat-card-actions class="actions.container">
     <button
@@ -35,20 +35,22 @@
       [disabled]="disabled === true"
       class="excludeAll"
     >
-      Exclude All
+      Excluir Todos
     </button>
   </mat-card-actions>
   <mat-card class="mat-form">
     <form id="form">
-      <h5 style="text-align: center">Fill in the fieldsbelow to payment:</h5>
+      <h5 style="text-align: center">
+        Preencha os campos abaixo para completar o pagamento.
+      </h5>
       <p>
         <mat-form-field appearance="outline" class="input-form">
           <mat-label>{{
-            disabled ? "Please select at least one filme" : "Whats Your name?"
+            disabled ? "Por favor selecione um filme" : "Qual seu Nome?"
           }}</mat-label>
           <input
             matInput
-            placeholder="Your Name"
+            placeholder="Seu Nome"
             required
             name="name"
             [disabled]="disabled === true"
@@ -60,11 +62,11 @@
       <p>
         <mat-form-field appearance="outline" class="input-form">
           <mat-label>{{
-            disabled ? "Please select at least one filme" : "Whats Your Adress?"
+            disabled ? "Por favor selecione um filme" : "Qual seu Endereço?"
           }}</mat-label>
           <input
             matInput
-            placeholder="Your Adress"
+            placeholder="Digite seu Endereço"
             required
             name="adress"
             [disabled]="disabled === true"
@@ -77,9 +79,7 @@
       <p>
         <mat-form-field class="input-form">
           <mat-label>{{
-            disabled
-              ? "Please select at least one filme"
-              : "Enter Your Passowrd"
+            disabled ? "Por favor selecione um filme" : "Digite sua Senha"
           }}</mat-label>
           <input
             matInput
@@ -115,7 +115,7 @@
             : 'false'
         "
       >
-        Pay
+        Confirme o Pagamento.
       </button>
       <button
         type="submit"
@@ -123,7 +123,7 @@
         class="mat-cancel"
         (click)="cancel()"
       >
-        {{ disabled ? "back" : "Cancel" }}
+        {{ disabled ? "Voltar" : "Cancel" }}
       </button>
     </form>
   </mat-card>

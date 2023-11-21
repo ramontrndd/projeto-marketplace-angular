@@ -4,10 +4,15 @@
 }
 .mat-card h2 {
   text-align: center;
+  font-family: "Smooch Sans";
+}
+mat-card-subtitle {
+  font-weight: bold;
 }
 .mat-card-title h2,
 h3 {
   padding: 10px;
+  font-family: "Smooch Sans";
 }
 .mat-card-film.isValid {
   display: none;
@@ -51,12 +56,12 @@ h3 {
   height: 100px;
   border-radius: 2px;
 }
-.error{
-    background-color: #eb3f5b;
-    color: #f2f2f2;
+.error {
+  background-color: #eb3f5b;
+  color: #f2f2f2;
 }
 
-.sucess{
-    background-color: #00f514;
-    color: #f2f2f2;   
+.sucess {
+  background-color: #00f514;
+  color: #f2f2f2;
 }

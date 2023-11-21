@@ -26,6 +26,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
 import { ApiService } from './services/ApiService';
 import { NotFoundComponent } from './components/template/not-found/not-found.component';
+import { AboutComponent } from './components/template/about/about.component';
 
 
 @NgModule({
@@ -40,6 +41,7 @@ import { NotFoundComponent } from './components/template/not-found/not-found.com
     SelectButtonComponent,
     CheckoutComponent,
     NotFoundComponent,
+    AboutComponent,
   ],
   imports: [
     BrowserModule,
