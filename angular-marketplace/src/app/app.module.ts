@@ -26,6 +26,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
 import { ApiService } from './services/ApiService';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -55,6 +56,7 @@ import { ApiService } from './services/ApiService';
     MatBadgeModule,
     MatIconModule,
     FormsModule,
+    
   ],
   providers: [ApiService],
   bootstrap: [AppComponent],

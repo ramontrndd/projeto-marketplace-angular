@@ -1,23 +1,24 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { firstValueFrom } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ApiService {
-  constructor() {
-    const url = 'https://api-films-ca70c46191e5.herokuapp.com/films/'
-    fetch(url)
-  .then(response => {
-    if (!response.ok) {
-      throw new Error(`HTTP error! Status: ${response.status}`);
+  constructor(private httpClient: HttpClient) {
+    this.carregarFilms();
+  }
+  async carregarFilms() {
+    try {
+      const requisicao = await firstValueFrom(
+        this.httpClient.get(
+          'https://api-films-ca70c46191e5.herokuapp.com/films'
+        )
+      );
+      console.log(requisicao);
+    } catch (error) {
+      console.error('Erro ao carregar os filmes:', error);
     }
-    return response.json(); // ou response.text() se os dados não forem JSON
-  })
-  .then(data => {
-    console.log('Dados recebidos:', data);
-  })
-  .catch(error => {
-    console.error('Erro:', error);
-  });
   }
 }
