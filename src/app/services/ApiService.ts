@@ -16,7 +16,7 @@ export class ApiService {
   async carregarFilms() {
       const requisicao = await firstValueFrom(
         this.httpClient.get<any>(
-          'https://api-films-ca70c46191e5.herokuapp.com/films/'
+          'https://films-api-v0tr.onrender.com/films'
         )
       );
       this.listFilmsApi = requisicao.results;
