@@ -1,17 +1,16 @@
-<mat-card-content class="mat-card-container" *ngFor="let apiService of apiService.listFilmsApi">
+<mat-card-content
+  class="mat-card-container"
+  *ngFor="let apiService of apiService.listFilmsApi"
+>
   <mat-card class="card-film">
     <mat-card-title class="mat-card-title">
-      <h2> {{ apiService.name }}</h2>
+      <h2>{{ apiService.name }}</h2>
     </mat-card-title>
-    <mat-card-subtitle class="mat-card-category">
-      <h3> {{apiService.category}}  </h3>
-    </mat-card-subtitle>
-
     <mat-card-content class="card-content">
       <img [src]="apiService.imgLink" alt="capa" />
 
       <p class="card-price">
-        {{apiService.price | currency }}
+        {{ apiService.price | currency : "BRL" }}
       </p>
 
       <app-select-button (click)="selectFilm(apiService)"></app-select-button>
