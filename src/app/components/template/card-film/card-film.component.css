@@ -1,6 +1,7 @@
 .mat-card-container {
   display: inline-flex;
   margin: 10px 0px;
+  
 }
 .mat-card__film {
   display: flex;
