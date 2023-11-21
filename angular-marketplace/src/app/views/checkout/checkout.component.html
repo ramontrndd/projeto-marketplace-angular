@@ -43,7 +43,9 @@
       <h5 style="text-align: center">Fill in the fieldsbelow to payment:</h5>
       <p>
         <mat-form-field appearance="outline" class="input-form">
-          <mat-label>{{ disabled ? "Please select at least one filme" : "Whats Your name?"  }}</mat-label>
+          <mat-label>{{
+            disabled ? "Please select at least one filme" : "Whats Your name?"
+          }}</mat-label>
           <input
             matInput
             placeholder="Your Name"
@@ -57,7 +59,9 @@
       </p>
       <p>
         <mat-form-field appearance="outline" class="input-form">
-          <mat-label>{{ disabled ? "Please select at least one filme" : "Whats Your Adress?"  }}</mat-label>
+          <mat-label>{{
+            disabled ? "Please select at least one filme" : "Whats Your Adress?"
+          }}</mat-label>
           <input
             matInput
             placeholder="Your Adress"
@@ -72,7 +76,11 @@
 
       <p>
         <mat-form-field class="input-form">
-          <mat-label>{{ disabled ? "Please select at least one filme" : "Enter Your Passowrd"  }}</mat-label>
+          <mat-label>{{
+            disabled
+              ? "Please select at least one filme"
+              : "Enter Your Passowrd"
+          }}</mat-label>
           <input
             matInput
             [type]="hide ? 'password' : 'text'"
@@ -99,7 +107,13 @@
         mat-flat-button
         class="mat-pay"
         (click)="payment()"
-        [disabled]="client.password == undefined || client.password == '' || totalPrice == 0 ? 'true' : 'false'"
+        [disabled]="
+          client.password == undefined ||
+          client.password == '' ||
+          totalPrice == 0
+            ? 'true'
+            : 'false'
+        "
       >
         Pay
       </button>

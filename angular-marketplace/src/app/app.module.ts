@@ -3,29 +3,27 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatToolbarModule } from "@angular/material/toolbar";
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { HeaderComponent } from './components/template/header/header.component';
-import { FooterComponent } from './components/template/footer/footer.component'
-import  { MatListModule } from '@angular/material/list';
+import { FooterComponent } from './components/template/footer/footer.component';
+import { MatListModule } from '@angular/material/list';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatButtonModule } from '@angular/material/button';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { NavbarComponent } from './components/template/navbar/navbar.component';
-import {MatCardModule} from '@angular/material/card';
+import { MatCardModule } from '@angular/material/card';
 import { HomeComponent } from './views/home/home.component';
-import {HttpClientModule} from "@angular/common/http";
+import { HttpClientModule } from '@angular/common/http';
 import { CardFilmComponent } from './components/template/card-film/card-film.component';
 import { ListFilmsComponent } from './views/list-films/list-films.component';
 import { SelectButtonComponent } from './components/template/select-button/select-button.component';
-import  { MatSnackBarModule } from '@angular/material/snack-bar';
-import  { MatFormFieldModule } from '@angular/material/form-field';
-import  { MatInputModule } from '@angular/material/input';
-import  { MatBadgeModule } from '@angular/material/badge';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatBadgeModule } from '@angular/material/badge';
 import { CheckoutComponent } from './views/checkout/checkout.component';
-import {MatIconModule} from '@angular/material/icon';
+import { MatIconModule } from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
-
-
 
 @NgModule({
   declarations: [
@@ -38,7 +36,6 @@ import { FormsModule } from '@angular/forms';
     ListFilmsComponent,
     SelectButtonComponent,
     CheckoutComponent,
-    
   ],
   imports: [
     BrowserModule,
@@ -56,9 +53,9 @@ import { FormsModule } from '@angular/forms';
     MatInputModule,
     MatBadgeModule,
     MatIconModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

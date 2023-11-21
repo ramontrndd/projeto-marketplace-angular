@@ -4,22 +4,23 @@ import { HomeComponent } from './views/home/home.component';
 import { ListFilmsComponent } from './views/list-films/list-films.component';
 import { CheckoutComponent } from './views/checkout/checkout.component';
 
-const routes: Routes = [{
-  path: "",
-  component: HomeComponent
-},
-{
-  path: "list-films",
-  component: ListFilmsComponent
-},
-{
-  path: "checkout",
-  component: CheckoutComponent
-}
+const routes: Routes = [
+  {
+    path: '',
+    component: HomeComponent,
+  },
+  {
+    path: 'list-films',
+    component: ListFilmsComponent,
+  },
+  {
+    path: 'checkout',
+    component: CheckoutComponent,
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
