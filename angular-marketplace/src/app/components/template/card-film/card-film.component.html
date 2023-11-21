@@ -4,10 +4,8 @@
 >
   <mat-card class="mat-card__film">
     <img [src]="apiService.imgLink" alt="capa" />
-
-    
     <div class="mat-card__pay">
-      <p>{{ apiService.name }}</p>
+      <p style="font-size: 1rem;">{{ apiService.name }}</p>
       <p class="card-price">
         {{ apiService.price | currency : "BRL" }}
       </p>

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CheckoutService } from '../checkout/checkout.service';
-import { Film } from './film.model';
+import { Film } from '../home/list-films/film.model';
 import { Router } from '@angular/router';
 import { ApiService } from 'src/app/services/ApiService';
 
