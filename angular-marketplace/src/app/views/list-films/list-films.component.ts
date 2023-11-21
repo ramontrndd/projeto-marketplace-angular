@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CheckoutService } from '../checkout/checkout.service';
 import { Film } from './film.model';
 import { Router } from '@angular/router';
+import { ApiService } from 'src/app/services/ApiService';
 
 @Component({
   selector: 'app-list-films',
@@ -13,8 +14,8 @@ export class ListFilmsComponent implements OnInit{
   listFilms: Film [] = [];
   listSelectedFilms!: number;
   hidden = false
-
-  constructor(private checkoutservice: CheckoutService, private route: Router) {}
+  
+  constructor(private checkoutservice: CheckoutService, private route: Router, public listApiService : ApiService) {}
   ngOnInit(): void{
     this.checkoutservice.totalPrice = 0;
     this.checkoutservice.listSelectedFilms = [];

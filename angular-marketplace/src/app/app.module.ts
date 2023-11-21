@@ -24,6 +24,7 @@ import { MatBadgeModule } from '@angular/material/badge';
 import { CheckoutComponent } from './views/checkout/checkout.component';
 import { MatIconModule } from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
+import { ApiService } from './services/ApiService';
 
 @NgModule({
   declarations: [
@@ -55,7 +56,7 @@ import { FormsModule } from '@angular/forms';
     MatIconModule,
     FormsModule,
   ],
-  providers: [],
+  providers: [ApiService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
