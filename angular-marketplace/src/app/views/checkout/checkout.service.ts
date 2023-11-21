@@ -3,12 +3,13 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Film } from '../home/list-films/film.model';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { ApiService } from 'src/app/services/ApiService';
 
 @Injectable({
   providedIn: 'root',
 })
 export class CheckoutService {
-  public baseUrl: string = 'http://localhost:3001/';
+  public baseUrl: string = '';
   public listFilms: Film[] = [];
   public totalPrice: number = 0;
   private _priceHandler: number = 0;
@@ -29,7 +30,11 @@ export class CheckoutService {
   setFilm(value: Film) {
     this._filmHandler = value;
   }
-  constructor(private httpClient: HttpClient, private snackBar: MatSnackBar) {}
+  constructor(
+    private httpClient: HttpClient,
+    private snackBar: MatSnackBar,
+    public apiService: ApiService
+  ) {}
   showMessage(msg: string, isError: boolean = false): void {
     this.snackBar.open(msg, 'Close!', {
       duration: 5000,

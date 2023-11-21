@@ -6,7 +6,7 @@ import { CheckoutComponent } from './views/checkout/checkout.component';
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'home',
     component: HomeComponent,
   },
   {
