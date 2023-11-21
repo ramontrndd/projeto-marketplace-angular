@@ -7,30 +7,35 @@ import { ApiService } from 'src/app/services/ApiService';
 @Component({
   selector: 'app-list-films',
   templateUrl: './list-films.component.html',
-  styleUrls: ['./list-films.component.css']
+  styleUrls: ['./list-films.component.css'],
 })
-export class ListFilmsComponent implements OnInit{
-
-  listFilms: Film [] = [];
+export class ListFilmsComponent implements OnInit {
+  listFilms: Film[] = [];
   listSelectedFilms!: number;
-  hidden = false
-  
-  constructor(private checkoutservice: CheckoutService, private route: Router, public listApiService : ApiService) {}
-  ngOnInit(): void{
+  hidden = false;
+
+  constructor(
+    private checkoutservice: CheckoutService,
+    private route: Router,
+    public apiService: ApiService
+  ) {}
+  ngOnInit(): void {
+    this.apiService.carregarFilms();
     this.checkoutservice.totalPrice = 0;
     this.checkoutservice.listSelectedFilms = [];
     this.checkoutservice.getListFilms().subscribe((film) => {
-      this.listFilms = film; 
-    })
-
+      this.listFilms = film;
+    });
   }
-  toCheckout():void {
+  toCheckout(): void {
     this.route.navigate(['../checkout']);
-    }
-  toggleBadgeVisibility(){
+  }
+  toggleBadgeVisibility() {
     this.hidden = !this.hidden;
   }
-  toggleCount(){
-    return this.listSelectedFilms = this.checkoutservice.listSelectedFilms.length;
-}
+  toggleCount() {
+    return (this.listSelectedFilms =
+      this.checkoutservice.listSelectedFilms.length);
+  }
+  
 }
