@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CheckoutService } from '../checkout/checkout.service';
-import { Film } from '../home/list-films/film.model';
 import { Router } from '@angular/router';
 import { ApiService } from 'src/app/services/ApiService';
+import { Film } from './film.model';
 
 @Component({
   selector: 'app-list-films',

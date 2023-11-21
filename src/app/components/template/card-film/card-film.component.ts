@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/services/ApiService';
 import { CheckoutService } from 'src/app/views/checkout/checkout.service';
-import { Film } from 'src/app/views/home/list-films/film.model';
+import { Film } from 'src/app/views/list-films/film.model';
+
 
 @Component({
   selector: 'app-card-film',
