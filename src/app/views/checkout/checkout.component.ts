@@ -50,7 +50,7 @@ export class CheckoutComponent implements OnInit {
         `'Pagamento realizado com sucesso! Pedido confirmado:' ${this.client.adress} Para: ${this.client.name}`,
         true
       );
-      this.route.navigate(['../list-films']);
+      this.route.navigate(['../films']);
     }
   }
   toggleButton() {
