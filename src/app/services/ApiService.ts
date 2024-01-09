@@ -16,7 +16,7 @@ export class ApiService {
   async carregarFilms() {
       const requisicao = await firstValueFrom(
         this.httpClient.get<any>(
-          'https://films-api-v0tr.onrender.com/films'
+          'https://films-api-v0tr.onrender.com/films/'
         )
       );
       this.listFilmsApi = requisicao.results;
