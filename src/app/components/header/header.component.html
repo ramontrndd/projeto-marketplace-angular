@@ -1,14 +1,23 @@
-<mat-toolbar  class="mat-elevation-z8">
-    <button mat-icon-button>
-      <mat-icon>menu</mat-icon>
+<mat-toolbar class="mat-elevation-z8">
+  <button mat-icon-button (click)="collapsed.set(!collapsed())">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <div class="theme-control">
+    <button mat-icon-button (click)="toggleTheme()" matTooltip="Alterar o tema">
+      @if (themeService.themeSignal() === 'dark') {
+      <mat-icon>bedtime</mat-icon>
+      } @else {
+      <mat-icon>light_mode</mat-icon>
+      }
     </button>
-    <div class="theme-control">
-      <button mat-icon-button (click)="toggleTheme()" matTooltip="Alterar o tema">
-        @if (themeService.themeSignal() === 'dark') {
-        <mat-icon>bedtime</mat-icon>
-        } @else {
-        <mat-icon>light_mode</mat-icon>
-        }
-      </button>
-    </div>
-  </mat-toolbar>
+  </div>
+</mat-toolbar>
+
+<mat-sidenav-container>
+  <mat-sidenav opened mode="side" [style.width]="sidenavWidth()">
+    <app-sidenav [collapsed]="collapsed()"></app-sidenav>
+  </mat-sidenav>
+  <mat-sidenav-content class="content" [style.margin-left]="sidenavWidth()">
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
