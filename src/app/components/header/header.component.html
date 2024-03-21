@@ -1,6 +1,10 @@
 <mat-toolbar class="mat-elevation-z8">
-  <button mat-icon-button (click)="collapsed.set(!collapsed())">
+  <button mat-icon-button (click)="collapsed.set(!collapsed())" >
+    @if (collapsed() === true) {
     <mat-icon>menu</mat-icon>
+    } @else {
+    <mat-icon>logout</mat-icon>
+    }
   </button>
   <div class="theme-control">
     <button mat-icon-button (click)="toggleTheme()" matTooltip="Alterar o tema">
