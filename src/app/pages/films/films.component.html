@@ -1,1 +1,11 @@
-<p>films works!</p>
+@for (item of listFilms; track $index){
+<mat-card class="mat-elevation-z4 card-container">
+
+<mat-card-content class="card-content">
+    <mat-card-title>{{ item.name }}</mat-card-title>
+    <mat-card-subtitle>{{ item.category }}</mat-card-subtitle>
+    <img src="{{ item.imgLink }}" alt="{{ item.imgLink }}" />
+    <mat-card-subtitle>{{ item.price | currency : "BRL" }}</mat-card-subtitle>
+</mat-card-content>
+ </mat-card>
+}
