@@ -4,11 +4,13 @@ import { MatCardModule } from '@angular/material/card';
 import { Film } from '../../shared/film-model';
 import { CheckoutService } from './../../services/checkout.service';
 import { environment } from '../../../environments/environment';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-films',
   standalone: true,
-  imports: [CommonModule, MatCardModule],
+  imports: [CommonModule, MatCardModule, MatButtonModule, MatIconModule],
   templateUrl: './films.component.html',
   styleUrl: './films.component.scss',
 })
