@@ -4,6 +4,7 @@ export class Film {
   category: string;
   imgLink: string;
   price: number;
+  static id: number | undefined;
 
   constructor(
     id: number,
