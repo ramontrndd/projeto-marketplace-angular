@@ -31,10 +31,11 @@ export class CheckoutService {
 
   selectFilm() {
     setTimeout(() => {
-      this.totalPrice += this.getPrice();
+
       const selectedFilm = this.getFilm();
       const filmeExistente = this.listSelectedFilms.find(f => f.id === selectedFilm.id);
       if (!filmeExistente) {
+        this.totalPrice += this.getPrice();
         this.listSelectedFilms.push(selectedFilm);
         this.snackbarService.openSnackbar('Filme adicionado ao carrinho', '')
       } else {
