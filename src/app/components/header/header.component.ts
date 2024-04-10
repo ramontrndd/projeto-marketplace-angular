@@ -1,20 +1,20 @@
-import {
-  Component,
-  HostListener,
-  OnInit,
-  computed,
-  inject,
-  signal,
-} from '@angular/core';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatIconModule } from '@angular/material/icon';
-import { MatButtonModule } from '@angular/material/button';
-import { MatTooltipModule } from '@angular/material/tooltip';
-import { MatSidenavModule } from '@angular/material/sidenav';
-import { ThemeService } from '../../services/theme.service';
 import { CommonModule } from '@angular/common';
-import { SidenavComponent } from '../sidenav/sidenav.component';
+import { Component, computed, HostListener, inject, OnInit, signal } from '@angular/core';
+import { MatBadgeModule } from '@angular/material/badge';
+import { MatButtonModule } from '@angular/material/button';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { MatIconModule } from '@angular/material/icon';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatTooltipModule } from '@angular/material/tooltip';
 import { RouterOutlet } from '@angular/router';
+
+import { ShopppingCartComponent } from '../../dialog/shoppping-cart/shoppping-cart.component';
+import { ThemeService } from '../../services/theme.service';
+import { SidenavComponent } from '../sidenav/sidenav.component';
+import { Film } from '../../shared/film-model';
+import { CheckoutService } from '../../services/checkout.service';
 
 @Component({
   selector: 'app-header',
@@ -26,14 +26,27 @@ import { RouterOutlet } from '@angular/router';
     MatButtonModule,
     MatTooltipModule,
     MatSidenavModule,
+    MatBadgeModule,
     SidenavComponent,
-    RouterOutlet
+    MatMenuModule,
+    RouterOutlet,
   ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
 })
 export class HeaderComponent implements OnInit {
+  listSelectedFilms: Film[] = [];
+
   themeService: ThemeService = inject(ThemeService);
+
+
+  constructor(public dialog: MatDialog) {}
+
+  shopCartAction() {
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.width = '550px';
+    this.dialog.open(ShopppingCartComponent, dialogConfig);
+  }
 
   toggleTheme() {
     this.themeService.updateTheme();
@@ -50,6 +63,7 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit() {
     this.updateSidenavVisibility();
+
   }
 
   public updateSidenavVisibility() {

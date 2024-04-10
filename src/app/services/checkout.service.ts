@@ -1,3 +1,4 @@
+import { SnackbarService } from './snackbar.service';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -14,8 +15,7 @@ export class CheckoutService {
   public listFilms: Film[] = [];
   public listSelectedFilms: Film[] = [];
   private _filmhandler!: Film;
-
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private snackbarService: SnackbarService) {}
 
 
   getListFilms(): Observable<Film[]> {
@@ -32,7 +32,15 @@ export class CheckoutService {
   selectFilm() {
     setTimeout(() => {
       this.totalPrice += this.getPrice();
-      this.listSelectedFilms.push(this.getFilm());
+      const selectedFilm = this.getFilm();
+      const filmeExistente = this.listSelectedFilms.find(f => f.id === selectedFilm.id);
+      if (!filmeExistente) {
+        this.listSelectedFilms.push(selectedFilm);
+        this.snackbarService.openSnackbar('Filme adicionado ao carrinho', '')
+      } else {
+        this.snackbarService.openSnackbar('Este filme já foi adicionado ao carrinho','error')
+      }
+
     }, 1);
   }
 
@@ -45,6 +53,7 @@ export class CheckoutService {
     if (index > -1 || index === this.listSelectedFilms.indexOf(this.getFilm())
     ) {this.listSelectedFilms.splice(index, 1);
   }
+
   }
   getFilm() {
     return this._filmhandler;
@@ -53,4 +62,5 @@ export class CheckoutService {
   setFilm(value: Film) {
     this._filmhandler = value;
   }
+
 }

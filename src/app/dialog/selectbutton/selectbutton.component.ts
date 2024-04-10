@@ -14,8 +14,6 @@ import { SnackbarService } from '../../services/snackbar.service';
   styleUrl: './selectbutton.component.scss',
 })
 export class SelectbuttonComponent implements OnInit {
-  disabled: boolean = false;
-
   constructor(
     private checkoutService: CheckoutService,
     private snackbarService: SnackbarService
@@ -23,11 +21,7 @@ export class SelectbuttonComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  selectFilm(){
-    this.disabled = true;
-    this.checkoutService.selectFilm();
-    this.snackbarService.openSnackbar('Filme adicionado ao carrinho','Fechar');
+  selectFilm() {
+      this.checkoutService.selectFilm();
+    }
   }
-
-  unselectFilm() {}
-}

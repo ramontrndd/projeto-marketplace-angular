@@ -1,5 +1,5 @@
 <mat-toolbar class="mat-elevation-z8">
-  <button mat-icon-button (click)="collapsed.set(!collapsed())" >
+  <button mat-icon-button (click)="collapsed.set(!collapsed())">
     @if (collapsed() === true) {
     <mat-icon>menu</mat-icon>
     } @else {
@@ -7,6 +7,16 @@
     }
   </button>
   <div class="theme-control">
+    <button
+      mat-icon-button
+      (click)="shopCartAction()"
+      matTooltip="Abrir carrinho"
+      matBadge="3"
+      matBadgeColor="warn"
+      matBadgePosition="below before"
+    >
+      <mat-icon>shopping_cart</mat-icon>
+    </button>
     <button mat-icon-button (click)="toggleTheme()" matTooltip="Alterar o tema">
       @if (themeService.themeSignal() === 'dark') {
       <mat-icon>bedtime</mat-icon>

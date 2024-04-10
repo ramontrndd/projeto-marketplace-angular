@@ -3,6 +3,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { ReleasesComponent } from './pages/releases/releases.component';
 import { AboutComponent } from './pages/about/about.component';
 import { FilmsComponent } from './pages/films/films.component';
+import { CheckoutComponent } from './pages/checkout/checkout.component';
 
 export const routes: Routes = [
   {
@@ -29,5 +30,10 @@ export const routes: Routes = [
     path: 'about',
     title: 'Marketplace - Sobre',
     component: AboutComponent,
+  },
+  {
+    path: 'checkout',
+    title: 'Marketplace - Checkout',
+    component: CheckoutComponent,
   },
 ];
