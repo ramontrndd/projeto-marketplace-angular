@@ -11,9 +11,12 @@
       mat-icon-button
       (click)="shopCartAction()"
       matTooltip="Abrir carrinho"
-      matBadge="3"
+      matBadge="{{toggleCount()}}"
       matBadgeColor="warn"
       matBadgePosition="below before"
+      [matBadgeHidden]="hidden"
+      (mouseover)="toggleBadgeVisibility()"
+      (mouseout)="toggleBadgeVisibility()"
     >
       <mat-icon>shopping_cart</mat-icon>
     </button>

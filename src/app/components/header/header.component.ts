@@ -36,8 +36,12 @@ import { CheckoutService } from '../../services/checkout.service';
 })
 export class HeaderComponent implements OnInit {
   listSelectedFilms: Film[] = [];
-
+  hidden: boolean = false;
+  listFilmCount!: number;
+  
   themeService: ThemeService = inject(ThemeService);
+  checkoutService: CheckoutService = inject(CheckoutService)
+
 
 
   constructor(public dialog: MatDialog) {}
@@ -73,5 +77,12 @@ export class HeaderComponent implements OnInit {
       } else {
         this.collapsed.set(true);
       }
+  }
+  toggleBadgeVisibility() {
+    this.hidden = !this.hidden;
+  }
+  toggleCount() {
+    return (this.listFilmCount =
+      this.checkoutService.listSelectedFilms.length);
   }
 }
