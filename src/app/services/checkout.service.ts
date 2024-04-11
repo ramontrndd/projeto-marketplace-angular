@@ -10,7 +10,7 @@ import { Film } from '../shared/film-model';
 })
 export class CheckoutService {
   private urlApi = environment.api;
-  private _priceHandler: number = 0;
+  private _priceHandler!: number;
   public totalPrice: number = 0;
   public listFilms: Film[] = [];
   public listSelectedFilms: Film[] = [];
@@ -28,7 +28,6 @@ export class CheckoutService {
   setPrice(value: number) {
     this._priceHandler = value;
   }
-
   selectFilm() {
     setTimeout(() => {
 
@@ -44,9 +43,10 @@ export class CheckoutService {
 
     }, 1);
   }
-
-  unselectFilm() {
+  unselectFilm(film: Film) {
     this.totalPrice -= this.getPrice();
+    this.totalPrice -= film.price
+
     if (this.totalPrice < 0) {
       this.totalPrice = 0;
     }

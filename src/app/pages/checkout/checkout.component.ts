@@ -5,8 +5,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
-import {MatInputModule} from '@angular/material/input';
-
+import { MatInputModule } from '@angular/material/input';
 
 import { CheckoutService } from '../../services/checkout.service';
 import { Film } from '../../shared/film-model';
@@ -28,12 +27,16 @@ import { Router } from '@angular/router';
 })
 export class CheckoutComponent implements OnInit {
   listSelectedFilms: Film[] = [];
-  totalPrice: number = 0;
+  totalPrice!: number;
   disabled: boolean = false;
   hide: boolean = true;
   form: any;
 
-  constructor(private checkoutservice: CheckoutService, private route: Router, private snackbarService: SnackbarService) {}
+  constructor(
+    private checkoutservice: CheckoutService,
+    private route: Router,
+    private snackbarService: SnackbarService
+  ) {}
   ngOnInit(): void {
     this.totalPrice = this.checkoutservice.totalPrice;
     this.listSelectedFilms = this.checkoutservice.listSelectedFilms;
@@ -41,27 +44,39 @@ export class CheckoutComponent implements OnInit {
   }
 
   toggleButton() {
-    if (this.listSelectedFilms.length == 0) {
+    if (
+      this.listSelectedFilms.length == 0 ||
+      this.checkoutservice.listSelectedFilms.length == 0
+    ) {
       this.disabled = true;
     }
   }
-  unselectFilm(film: Film): void {
+  recalculateTotalPrice(): void {
+    this.checkoutservice.totalPrice = this.checkoutservice.listSelectedFilms.reduce((total, film) => total + film.price, 0);
+}
+  exclude(film: Film): void {
     this.totalPrice -= film.price;
     this.checkoutservice.setFilm(film);
-    this.checkoutservice.unselectFilm();
-    if(this.checkoutservice.listSelectedFilms.length == 0){
-      this.disabled = true;
-    } else {
-      this.disabled = false;
+    this.checkoutservice.unselectFilm(film);
+    this.recalculateTotalPrice();
+    if (this.totalPrice <= 0) {
+      this.excludeAll();
     }
   }
 
-  payment(): void {
-    this.snackbarService.openSnackbar('Pagamento efetuado', '')
-    this.route.navigate(['/'])
-    
+  excludeAll() {
+    this.checkoutservice.totalPrice = 0;
+    this.totalPrice = 0;
+    this.checkoutservice.listSelectedFilms = [];
+    this.listSelectedFilms = [];
+    this.toggleButton();
   }
-  cancel ( ): void{
-    this.route.navigate(['/films'])
+
+  payment(): void {
+    this.snackbarService.openSnackbar('Pagamento efetuado', '');
+    this.route.navigate(['/']);
+  }
+  cancel(): void {
+    this.route.navigate(['/films']);
   }
 }

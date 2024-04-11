@@ -33,8 +33,4 @@ export class ShopppingCartComponent implements OnInit {
   ngOnInit(): void {
     this.listSelectedFilms = this.checkoutService.listSelectedFilms;
   }
-  unselectFilm(film: Film): void {
-    this.checkoutService.setFilm(film);
-    this.checkoutService.unselectFilm();
-  }
 }

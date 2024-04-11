@@ -33,9 +33,12 @@ export class FilmsComponent implements OnInit {
       this.listFilms = film;
     });
   }
-
+  recalculateTotalPrice(): void {
+    this.checkService.totalPrice = this.checkService.listSelectedFilms.reduce((total, film) => total + film.price, 0);
+}
   selectFilm(film: Film): void {
     this.checkService.setPrice(film.price);
     this.checkService.setFilm(film);
+    this.recalculateTotalPrice();
   }
 }
