@@ -6,6 +6,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
+import { FormsModule } from '@angular/forms';
 
 import { CheckoutService } from '../../services/checkout.service';
 import { Film } from '../../shared/film-model';
@@ -21,6 +22,7 @@ import { Router } from '@angular/router';
     MatButtonModule,
     MatFormFieldModule,
     MatInputModule,
+    FormsModule,
   ],
   templateUrl: './checkout.component.html',
   styleUrl: './checkout.component.scss',
@@ -31,6 +33,7 @@ export class CheckoutComponent implements OnInit {
   disabled: boolean = false;
   hide: boolean = true;
   form: any;
+  client: any = {};
 
   constructor(
     private checkoutservice: CheckoutService,
@@ -38,6 +41,10 @@ export class CheckoutComponent implements OnInit {
     private snackbarService: SnackbarService
   ) {}
   ngOnInit(): void {
+    this.form = document.querySelector('#form');
+    this.form.addEventListener('click', (event: any) => {
+      event.preventDefault();
+    });
     this.totalPrice = this.checkoutservice.totalPrice;
     this.listSelectedFilms = this.checkoutservice.listSelectedFilms;
     this.toggleButton();
@@ -52,8 +59,12 @@ export class CheckoutComponent implements OnInit {
     }
   }
   recalculateTotalPrice(): void {
-    this.checkoutservice.totalPrice = this.checkoutservice.listSelectedFilms.reduce((total, film) => total + film.price, 0);
-}
+    this.checkoutservice.totalPrice =
+      this.checkoutservice.listSelectedFilms.reduce(
+        (total, film) => total + film.price,
+        0
+      );
+  }
   exclude(film: Film): void {
     this.totalPrice -= film.price;
     this.checkoutservice.setFilm(film);
@@ -71,12 +82,26 @@ export class CheckoutComponent implements OnInit {
     this.listSelectedFilms = [];
     this.toggleButton();
   }
-
-  payment(): void {
-    this.snackbarService.openSnackbar('Pagamento efetuado', '');
-    this.route.navigate(['/']);
-  }
   cancel(): void {
     this.route.navigate(['/films']);
+  }
+  payment(): void {
+    if (
+      this.client.adress === undefined ||
+      this.client.name === undefined ||
+      this.client.password === undefined
+    ) {
+      this.snackbarService.showMessage(
+        'Por favor insira dados válidos!',
+        false
+      );
+    } else {
+      this.snackbarService.showMessage(
+        `'Pagamento realizado com sucesso! Pedido confirmado:' ${this.client.adress} Para: ${this.client.name}`,
+        true
+      );
+      this.route.navigate(['/']);
+      this.checkoutservice.listSelectedFilms = [];
+    }
   }
 }

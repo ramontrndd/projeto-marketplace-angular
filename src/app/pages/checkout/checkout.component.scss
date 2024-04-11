@@ -23,6 +23,9 @@ mat-card-content {
   justify-content: space-between;
   align-items: center;
 }
+button {
+  margin: 5px;
+}
 .card-price {
   display: flex;
   text-align: left;
@@ -35,8 +38,7 @@ mat-card-content {
     margin-right: 15px;
   }
 }
-
-.mat-form{
+.mat-form {
   padding: 15px;
 }
 .mat-card.film.isValid {
@@ -45,4 +47,16 @@ mat-card-content {
 
 .mat-card.film:hover {
   background-color: #f2f2f2;
+}
+.input-form {
+  width: 300px;
+  margin: 10px 15px;
+}
+.mat-cancel {
+  background-color: #eb3f5b;
+  color: #f2f2f2;
+}
+.mat-pay {
+  background-color: #00f514;
+  color: #f2f2f2;
 }

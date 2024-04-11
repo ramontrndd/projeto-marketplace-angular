@@ -15,8 +15,7 @@ import { SnackbarService } from '../../services/snackbar.service';
 })
 export class SelectbuttonComponent implements OnInit {
   constructor(
-    private checkoutService: CheckoutService,
-    private snackbarService: SnackbarService
+    private checkoutService: CheckoutService
   ) {}
 
   ngOnInit(): void {}

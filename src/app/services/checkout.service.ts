@@ -36,9 +36,9 @@ export class CheckoutService {
       if (!filmeExistente) {
         this.totalPrice += this.getPrice();
         this.listSelectedFilms.push(selectedFilm);
-        this.snackbarService.openSnackbar('Filme adicionado ao carrinho', '')
+        this.snackbarService.showMessage('Filme adicionado ao carrinho', true)
       } else {
-        this.snackbarService.openSnackbar('Este filme já foi adicionado ao carrinho','error')
+        this.snackbarService.showMessage('Este filme já foi adicionado ao carrinho', false)
       }
 
     }, 1);
