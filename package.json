@@ -5,6 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build:prod": "ng build --configuration=production --base-href=/marketplace-angular/",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve:ssr:marketplace-films": "node dist/marketplace-films/server/server.mjs"
