@@ -1,0 +1,14 @@
+@for (film of listFilms; track film.id){
+<mat-card class="mat-elevation-z4 card-container">
+  <mat-card-content class="card-content">
+    <mat-card-title>{{ film.name }}</mat-card-title>
+    <mat-card-subtitle>{{ film.category }}</mat-card-subtitle>
+    <img src="{{ film.imgLink }}" alt="{{ film.name }}" />
+    <mat-card-subtitle style="font-size: 1rem; text-align: end;">{{ film.price | currency : "BRL" }}</mat-card-subtitle>
+
+    <div class="card-button">
+      <app-selectbutton (click)="selectFilm(film)"></app-selectbutton>
+    </div>
+  </mat-card-content>
+</mat-card>
+}

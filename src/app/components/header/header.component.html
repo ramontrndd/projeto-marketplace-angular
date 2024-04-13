@@ -1,0 +1,40 @@
+<mat-toolbar class="mat-elevation-z8">
+  <button mat-icon-button (click)="collapsed.set(!collapsed())">
+    @if (collapsed() === true) {
+    <mat-icon>menu</mat-icon>
+    } @else {
+    <mat-icon>logout</mat-icon>
+    }
+  </button>
+  <div class="theme-control">
+    <button
+      mat-icon-button
+      (click)="shopCartAction()"
+      matTooltip="Abrir carrinho"
+      matBadge="{{toggleCount()}}"
+      matBadgeColor="warn"
+      matBadgePosition="below before"
+      [matBadgeHidden]="hidden"
+      (mouseover)="toggleBadgeVisibility()"
+      (mouseout)="toggleBadgeVisibility()"
+    >
+      <mat-icon>shopping_cart</mat-icon>
+    </button>
+    <button mat-icon-button (click)="toggleTheme()" matTooltip="Alterar o tema">
+      @if (themeService.themeSignal() === 'dark') {
+      <mat-icon>bedtime</mat-icon>
+      } @else {
+      <mat-icon>light_mode</mat-icon>
+      }
+    </button>
+  </div>
+</mat-toolbar>
+
+<mat-sidenav-container>
+  <mat-sidenav opened mode="side" [style.width]="sidenavWidth()">
+    <app-sidenav [collapsed]="collapsed()"></app-sidenav>
+  </mat-sidenav>
+  <mat-sidenav-content class="content" [style.margin-left]="sidenavWidth()">
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
