@@ -31,7 +31,7 @@
       Preencha os campos abaixo para completar o pagamento.
     </h5>
     <p>
-      <mat-form-field appearance="fill" class="input-form">
+      <mat-form-field appearance="outline" class="input-form">
         <mat-label>{{
           disabled ? "Por favor selecione um filme" : "Qual seu Nome?"
         }}</mat-label>
@@ -47,7 +47,7 @@
       </mat-form-field>
     </p>
     <p>
-      <mat-form-field appearance="fill" class="input-form">
+      <mat-form-field appearance="outline" class="input-form">
         <mat-label>{{
           disabled ? "Por favor selecione um filme" : "Qual seu Endereço?"
         }}</mat-label>
@@ -64,7 +64,7 @@
     </p>
 
     <p>
-      <mat-form-field class="input-form">
+      <mat-form-field class="input-form" appearance="outline">
         <mat-label>{{
           disabled ? "Por favor selecione um filme" : "Digite sua Senha"
         }}</mat-label>
@@ -93,6 +93,7 @@
       type="submit"
       mat-flat-button
       class="mat-pay"
+      [class.isValid]="disabled === true"
       (click)="payment()"
       [disabled]="
         client.password == undefined ||

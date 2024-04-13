@@ -1,0 +1,33 @@
+mat-card {
+  margin: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  > mat-card-title {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 300;
+    line-height: 1.2;
+  }
+  > img {
+    width: 150px;
+    height: 150px;
+  }
+}
+mat-card-actions{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  >button {
+    margin: 5px;
+  }
+}
+.mat-card-content {
+  margin-top: 50px;
+  text-align: center;
+}
+.logo {
+  width: 150px;
+}

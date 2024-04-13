@@ -39,18 +39,13 @@ button {
   }
 }
 .mat-form {
-  padding: 15px;
+ padding: 10px;
 }
-.mat-card.film.isValid {
-  display: none;
-}
-
 .mat-card.film:hover {
   background-color: #f2f2f2;
 }
 .input-form {
-  width: 300px;
-  margin: 10px 15px;
+  margin: 5px auto;
 }
 .mat-cancel {
   background-color: #eb3f5b;
@@ -60,3 +55,4 @@ button {
   background-color: #00f514;
   color: #f2f2f2;
 }
+

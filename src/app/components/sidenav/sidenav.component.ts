@@ -28,11 +28,6 @@ export class SidenavComponent {
       route: 'home',
     },
     {
-      icon: 'movie',
-      label: 'Lançamentos',
-      route: 'releases',
-    },
-    {
       icon: 'slideshow',
       label: 'Filmes',
       route: 'films',

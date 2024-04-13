@@ -1,5 +1,6 @@
 mat-card {
   display: inline-flex;
+
 }
 mat-card-content {
   padding: 0 10px;
@@ -9,6 +10,7 @@ mat-card-content {
   max-width: 15rem;
   max-height: 27rem;
   margin: 15px;
+
 }
 .card-content {
   > mat-card-subtitle {
@@ -36,5 +38,12 @@ mat-card-content {
     > button {
       margin: 3px;
     }
+  }
+}
+@media screen and (min-width: 280px) and (max-width: 728px)  {
+  .card-container  {
+    margin: 15px auto;
+    align-items: center;
+    display: flex;
   }
 }
