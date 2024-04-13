@@ -24,7 +24,7 @@ import { SelectbuttonComponent } from '../../dialog/selectbutton/selectbutton.co
 export class FilmsComponent implements OnInit {
 
   listFilms: Film[] = [];
-  urlApi = environment.api;
+  urlApi = environment.apiUrl;
 
   constructor(private checkService: CheckoutService) {}
 

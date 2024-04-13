@@ -9,7 +9,7 @@ import { Film } from '../shared/film-model';
   providedIn: 'root',
 })
 export class CheckoutService {
-  private urlApi = environment.api;
+  private urlApi = environment.apiUrl;
   private _priceHandler!: number;
   public totalPrice: number = 0;
   public listFilms: Film[] = [];

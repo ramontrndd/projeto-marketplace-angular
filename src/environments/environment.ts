@@ -1,3 +1,4 @@
 export const environment = {
-  api: '',
+  production: false,
+  apiUrl: 'https://films-api-v0tr.onrender.com'
 };

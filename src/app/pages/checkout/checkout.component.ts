@@ -41,10 +41,6 @@ export class CheckoutComponent implements OnInit {
     private snackbarService: SnackbarService
   ) {}
   ngOnInit(): void {
-    this.form = document.querySelector('#form');
-    this.form.addEventListener('click', (event: any) => {
-      event.preventDefault();
-    });
     this.totalPrice = this.checkoutservice.totalPrice;
     this.listSelectedFilms = this.checkoutservice.listSelectedFilms;
     this.toggleButton();
