@@ -3,10 +3,11 @@ import { Component, OnInit, inject } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 import { Film } from '../../shared/film-model';
 import { CheckoutService } from './../../services/checkout.service';
-import { environment } from '../../../environments/environment';
+
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { SelectbuttonComponent } from '../../dialog/selectbutton/selectbutton.component';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-films',
@@ -24,7 +25,7 @@ import { SelectbuttonComponent } from '../../dialog/selectbutton/selectbutton.co
 export class FilmsComponent implements OnInit {
 
   listFilms: Film[] = [];
-  urlApi = environment.apiUrl;
+
 
   constructor(private checkService: CheckoutService) {}
 

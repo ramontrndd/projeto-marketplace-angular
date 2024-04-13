@@ -9,7 +9,7 @@ import { Film } from '../shared/film-model';
   providedIn: 'root',
 })
 export class CheckoutService {
-  private urlApi = environment.apiUrl;
+  private urlApi: string = 'https://films-api-v0tr.onrender.com';
   private _priceHandler!: number;
   public totalPrice: number = 0;
   public listFilms: Film[] = [];
