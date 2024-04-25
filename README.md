@@ -1,32 +1,20 @@
-# MarketplaceFilms
+# Projeto MarketPlace de Filmes 🚀
+<hr>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.0.
+<div align="center">
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/angular/angular-original.svg" alt="Angular Logo" width="300px">
+</div>
 
-## Development server
+<hr>
+          
+Com o objetivo de criar uma experiência de compra mais eficiente e dinâmica, mergulhei de cabeça na implementação de diversas tecnologias de ponta.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- **Integração de API Rest:** Utilizei requisições HTTP para consumir uma API Rest, proporcionando uma conexão instantânea com um vasto leque de produtos e informações atualizadas em tempo real.
+  
+- **Snackbar Dinâmico:** Ao adicionar ou remover produtos do carrinho, implementei um snackbar que oferece feedback imediato ao usuário, tornando a experiência de compra mais interativa e satisfatória.
+  
+- **Angular 17 em Ação:** Aproveitei ao máximo as novas funcionalidades e melhorias do Angular 17, incluindo o uso de sinais (signals) para otimizar o fluxo de dados e aprimorar a performance da aplicação.
+  
+- **Layout Responsivo de Ponta a Ponta:** Um dos pontos-chave do projeto foi o desenvolvimento de um layout totalmente responsivo, garantindo uma experiência consistente e funcional em todos os dispositivos, desde smartphones até desktops de alta resolução.
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
-
-
-## DEPLOY 
-
-Github Actions  - TESTANDO DEPLOY
+Estou incrivelmente empolgado com os resultados alcançados e animado para compartilhar mais detalhes em breve. Este projeto é apenas o começo de uma jornada contínua de inovação e aprimoramento na experiência de compra online. 🛒✨
